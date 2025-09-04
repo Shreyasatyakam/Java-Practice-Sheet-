@@ -11,7 +11,7 @@ public class AnagramCheck {
         System.out.print("Enter second string: ");
         String str2 = sc.nextLine().replaceAll("\\s+", "").toLowerCase();
 
-        // Check anagram by sorting characters
+    
         boolean isAnagram = false;
         if (str1.length() == str2.length()) {
             char[] arr1 = str1.toCharArray();
@@ -23,7 +23,6 @@ public class AnagramCheck {
             isAnagram = Arrays.equals(arr1, arr2);
         }
 
-        // Output result
         if (isAnagram) {
             System.out.println("✅ The strings are anagrams.");
         } else {
