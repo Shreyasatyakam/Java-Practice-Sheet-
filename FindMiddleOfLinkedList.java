@@ -13,7 +13,7 @@ class Node {
 class LinkedList {
     Node head;
 
-    // Insert node at end
+    
     void insert(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -27,7 +27,7 @@ class LinkedList {
         temp.next = newNode;
     }
 
-    // Find middle using slow and fast pointers
+   
     int findMiddle() {
         if (head == null) throw new IllegalStateException("List is empty");
 
@@ -35,13 +35,13 @@ class LinkedList {
         Node fast = head;
 
         while (fast != null && fast.next != null) {
-            slow = slow.next;         // move by 1
-            fast = fast.next.next;    // move by 2
+            slow = slow.next;         
+            fast = fast.next.next;    
         }
-        return slow.data; // middle node
+        return slow.data; 
     }
 
-    // Print linked list
+   
     void display() {
         Node temp = head;
         while (temp != null) {
