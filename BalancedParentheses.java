@@ -20,11 +20,11 @@ public class BalancedParentheses {
         Stack<Character> stack = new Stack<>();
 
         for (char ch : expr.toCharArray()) {
-            // If opening bracket, push it
+            
             if (ch == '(' || ch == '{' || ch == '[') {
                 stack.push(ch);
             }
-            // If closing bracket, check stack
+          
             else if (ch == ')' || ch == '}' || ch == ']') {
                 if (stack.isEmpty()) return false;
 
@@ -33,7 +33,7 @@ public class BalancedParentheses {
             }
         }
 
-        // Balanced only if stack is empty at end
+        
         return stack.isEmpty();
     }
 
