@@ -6,11 +6,11 @@ public class EmailExtractor {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Take input text from user
+       
         System.out.println("Enter text containing email IDs:");
         String input = sc.nextLine();
 
-        // Regex for email pattern
+        
         String emailRegex = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
         Pattern pattern = Pattern.compile(emailRegex);
         Matcher matcher = pattern.matcher(input);
