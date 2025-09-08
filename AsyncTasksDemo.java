@@ -11,10 +11,10 @@ public class AsyncTasksDemo {
         System.out.print("Enter second number: ");
         int b = sc.nextInt();
 
-        // Run async tasks
+     
         CompletableFuture<Integer> task1 = CompletableFuture.supplyAsync(() -> {
             System.out.println("Task1: Computing square of " + a);
-            sleep(1000); // simulate delay
+            sleep(1000); 
             return a * a;
         });
 
@@ -24,13 +24,13 @@ public class AsyncTasksDemo {
             return b * b * b;
         });
 
-        // Combine results
+ 
         CompletableFuture<Integer> combined = task1.thenCombine(task2, (sq, cube) -> {
             System.out.println("Combining results...");
             return sq + cube;
         });
 
-        // Get final result
+ 
         System.out.println("Final Result (square(a) + cube(b)) = " + combined.get());
 
         sc.close();
