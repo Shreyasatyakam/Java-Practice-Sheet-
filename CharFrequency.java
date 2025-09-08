@@ -9,14 +9,14 @@ public class CharFrequency {
 
         Map<Character, Integer> freqMap = new HashMap<>();
 
-        // count frequencies
+       
         for (char ch : input.toCharArray()) {
-            if (ch != ' ') { // ignore spaces
+            if (ch != ' ') {
                 freqMap.put(ch, freqMap.getOrDefault(ch, 0) + 1);
             }
         }
 
-        // display results
+      
         System.out.println("Character frequencies:");
         for (Map.Entry<Character, Integer> entry : freqMap.entrySet()) {
             System.out.println(entry.getKey() + " -> " + entry.getValue());
