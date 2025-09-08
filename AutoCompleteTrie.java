@@ -8,7 +8,7 @@ class TrieNode {
 class Trie {
     private final TrieNode root = new TrieNode();
 
-    // Insert a word into trie
+    
     public void insert(String word) {
         TrieNode node = root;
         for (char ch : word.toCharArray()) {
@@ -17,7 +17,7 @@ class Trie {
         node.isEndOfWord = true;
     }
 
-    // Find all words with given prefix
+    
     public List<String> autoComplete(String prefix) {
         TrieNode node = root;
         for (char ch : prefix.toCharArray()) {
@@ -29,7 +29,7 @@ class Trie {
         return results;
     }
 
-    // DFS to collect words
+    
     private void collectWords(TrieNode node, String prefix, List<String> results) {
         if (node.isEndOfWord) results.add(prefix);
         for (var entry : node.children.entrySet()) {
