@@ -7,7 +7,7 @@ public class DirectorySizeCalculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Take directory path as input
+     
         System.out.print("Enter directory path: ");
         String dirPath = sc.nextLine();
 
@@ -20,7 +20,7 @@ public class DirectorySizeCalculator {
 
         try (Stream<Path> walk = Files.walk(path)) {
             long size = walk
-                    .filter(Files::isRegularFile) // only files
+                    .filter(Files::isRegularFile) 
                     .mapToLong(p -> {
                         try {
                             return Files.size(p);
