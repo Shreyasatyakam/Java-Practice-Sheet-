@@ -9,11 +9,10 @@ public class DirectoryKeywordSearch {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Take directory path from user
+       
         System.out.print("Enter directory path: ");
         String dirPath = sc.nextLine();
 
-        // Take keyword to search
         System.out.print("Enter keyword to search: ");
         String keyword = sc.nextLine();
 
@@ -28,11 +27,11 @@ public class DirectoryKeywordSearch {
         System.out.println("\nSearching for '" + keyword + "' in directory: " + dirPath + "\n");
 
         try {
-            // Walk through directory recursively
+            
             Files.walkFileTree(path, new SimpleFileVisitor<>() {
                 @Override
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
-                    // Only check regular files
+                   
                     if (Files.isRegularFile(file)) {
                         try (Stream<String> lines = Files.lines(file)) {
                             long count = lines.filter(line -> line.contains(keyword)).count();
