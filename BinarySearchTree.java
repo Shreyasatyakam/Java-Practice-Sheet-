@@ -13,7 +13,7 @@ class Node {
 class BinarySearchTree {
     Node root;
 
-    // Insert a new node
+   
     void insert(int value) {
         root = insertRec(root, value);
     }
@@ -30,7 +30,7 @@ class BinarySearchTree {
         return root;
     }
 
-    // Search a value
+ 
     boolean search(int value) {
         return searchRec(root, value);
     }
@@ -41,7 +41,7 @@ class BinarySearchTree {
         return value < root.data ? searchRec(root.left, value) : searchRec(root.right, value);
     }
 
-    // Inorder Traversal
+
     void inorder() {
         inorderRec(root);
         System.out.println();
@@ -55,7 +55,7 @@ class BinarySearchTree {
         }
     }
 
-    // Preorder Traversal
+    
     void preorder() {
         preorderRec(root);
         System.out.println();
@@ -69,7 +69,7 @@ class BinarySearchTree {
         }
     }
 
-    // Postorder Traversal
+    
     void postorder() {
         postorderRec(root);
         System.out.println();
