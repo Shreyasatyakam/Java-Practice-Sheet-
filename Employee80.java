@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// Base Employee class
+
 class Employee80 {
     private String name;
     private double basicSalary;
@@ -20,10 +20,10 @@ class Employee80 {
         return basicSalary;
     }
 
-    // Calculate total salary (can be overridden)
+    
     public double calculateSalary() {
-        double hra = basicSalary * 0.2;   // House Rent Allowance
-        double da = basicSalary * 0.1;    // Dearness Allowance
+        double hra = basicSalary * 0.2;   
+        double da = basicSalary * 0.1;   
         return basicSalary + hra + da;
     }
 
@@ -34,7 +34,7 @@ class Employee80 {
     }
 }
 
-// Manager subclass (example of inheritance)
+
 class Manager extends Employee {
     private double bonus;
 
@@ -61,7 +61,7 @@ public class PayrollSystem {
 
         System.out.print("Enter number of employees: ");
         int n = sc.nextInt();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
 
         for (int i = 0; i < n; i++) {
             System.out.println("\nEnter details for employee " + (i + 1));
@@ -70,7 +70,7 @@ public class PayrollSystem {
 
             System.out.print("Enter basic salary: ");
             double basicSalary = sc.nextDouble();
-            sc.nextLine(); // consume newline
+            sc.nextLine(); 
 
             System.out.print("Is this employee a manager? (yes/no): ");
             String isManager = sc.nextLine().trim();
@@ -78,7 +78,7 @@ public class PayrollSystem {
             if (isManager.equalsIgnoreCase("yes")) {
                 System.out.print("Enter bonus: ");
                 double bonus = sc.nextDouble();
-                sc.nextLine(); // consume newline
+                sc.nextLine(); 
                 employees.add(new Manager(name, basicSalary, bonus));
             } else {
                 employees.add(new Employee(name, basicSalary));
