@@ -27,19 +27,19 @@ class Philosopher implements Runnable {
             while (true) {
                 think();
 
-                // Pick up left fork
+              
                 if (leftFork.tryLock()) {
                     try {
-                        // Pick up right fork
+                        
                         if (rightFork.tryLock()) {
                             try {
                                 eat();
                             } finally {
-                                rightFork.unlock(); // put down right fork
+                                rightFork.unlock(); 
                             }
                         }
                     } finally {
-                        leftFork.unlock(); // put down left fork
+                        leftFork.unlock(); 
                     }
                 }
             }
@@ -56,12 +56,12 @@ public class DiningPhilosophers {
         Thread[] philosophers = new Thread[numPhilosophers];
         ReentrantLock[] forks = new ReentrantLock[numPhilosophers];
 
-        // Initialize forks
+  
         for (int i = 0; i < numPhilosophers; i++) {
             forks[i] = new ReentrantLock();
         }
 
-        // Initialize philosophers
+       
         for (int i = 0; i < numPhilosophers; i++) {
             ReentrantLock leftFork = forks[i];
             ReentrantLock rightFork = forks[(i + 1) % numPhilosophers];
