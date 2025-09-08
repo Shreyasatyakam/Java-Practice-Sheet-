@@ -3,7 +3,7 @@ import java.nio.file.*;
 import java.util.*;
 
 public class CSVParser {
-    // Record to represent each row
+   
     record Employee(int id, String name, double salary) {}
 
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class CSVParser {
         try {
             List<String> lines = Files.readAllLines(Paths.get(filePath));
 
-            // Skip header (first line)
+          
             for (int i = 1; i < lines.size(); i++) {
                 String[] parts = lines.get(i).split(",");
                 if (parts.length == 3) {
