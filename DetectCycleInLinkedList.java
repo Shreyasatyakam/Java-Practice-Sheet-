@@ -13,7 +13,7 @@ class Node {
 class LinkedList {
     Node head;
 
-    // Insert node at end
+    
     void insert(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -33,17 +33,16 @@ class LinkedList {
         Node fast = head;
 
         while (fast != null && fast.next != null) {
-            slow = slow.next;          // move 1 step
-            fast = fast.next.next;     // move 2 steps
+            slow = slow.next;          
+            fast = fast.next.next;    
 
             if (slow == fast) {
-                return true;           // cycle detected
+                return true;          
             }
         }
         return false;
     }
 
-    // Create cycle manually (connect last node to given position)
     void createCycle(int pos) {
         if (head == null) return;
 
@@ -95,9 +94,9 @@ public class DetectCycleInLinkedList {
                 }
                 case 3 -> {
                     if (list.hasCycle()) {
-                        System.out.println("✅ Cycle detected in the linked list!");
+                        System.out.println(" Cycle detected in the linked list!");
                     } else {
-                        System.out.println("❌ No cycle found.");
+                        System.out.println("No cycle found.");
                     }
                 }
                 case 4 -> {
