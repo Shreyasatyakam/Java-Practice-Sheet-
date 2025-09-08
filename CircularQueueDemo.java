@@ -10,7 +10,6 @@ class CircularQueue {
         this.front = this.rear = this.size = 0;
     }
 
-    // Check if queue is full
     public boolean isFull() {
         return size == capacity;
     }
