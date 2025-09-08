@@ -13,7 +13,6 @@ class Node {
 class BinarySearchTree {
     Node root;
 
-    // Insert node
     void insert(int value) {
         root = insertRec(root, value);
     }
@@ -25,7 +24,7 @@ class BinarySearchTree {
         return root;
     }
 
-    // Level-order traversal
+   
     void levelOrder() {
         if (root == null) {
             System.out.println("Tree is empty.");
