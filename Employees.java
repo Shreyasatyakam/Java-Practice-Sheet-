@@ -39,7 +39,7 @@ public class GroupEmployees {
             employees.add(new Employee(name, dept));
         }
 
-        // Group employees by department using Streams
+       
         Map<String, List<Employee>> grouped =
             employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));
 
