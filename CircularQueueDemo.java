@@ -14,13 +14,10 @@ class CircularQueue {
     public boolean isFull() {
         return size == capacity;
     }
-
-    // Check if queue is empty
     public boolean isEmpty() {
         return size == 0;
     }
 
-    // Add element
     public void enqueue(int value) {
         if (isFull()) {
             System.out.println("❌ Queue is full. Cannot insert " + value);
@@ -32,7 +29,7 @@ class CircularQueue {
         System.out.println("✅ Inserted " + value);
     }
 
-    // Remove element
+
     public void dequeue() {
         if (isEmpty()) {
             System.out.println("❌ Queue is empty. Nothing to remove.");
@@ -44,7 +41,7 @@ class CircularQueue {
         System.out.println("✅ Removed " + removed);
     }
 
-    // Display queue
+ 
     public void display() {
         if (isEmpty()) {
             System.out.println("Queue is empty.");
