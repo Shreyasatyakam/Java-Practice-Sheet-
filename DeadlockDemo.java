@@ -3,7 +3,6 @@ public class DeadlockDemo {
         final Object lock1 = new Object();
         final Object lock2 = new Object();
 
-        // ❌ Deadlock example
         Thread t1 = new Thread(() -> {
             synchronized (lock1) {
                 System.out.println("Thread 1: Locked lock1");
@@ -31,7 +30,7 @@ public class DeadlockDemo {
         t1.start();
         t2.start();
 
-        // ✅ Solution: always lock in the SAME order
+       
         Thread t3 = new Thread(() -> {
             synchronized (lock1) {
                 System.out.println("Thread 3: Locked lock1 safely");
@@ -43,7 +42,7 @@ public class DeadlockDemo {
         });
 
         Thread t4 = new Thread(() -> {
-            synchronized (lock1) { // same order: lock1 -> lock2
+            synchronized (lock1) { 
                 System.out.println("Thread 4: Locked lock1 safely");
 
                 synchronized (lock2) {
