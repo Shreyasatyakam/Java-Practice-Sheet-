@@ -7,7 +7,7 @@ public class DirectoryCopy {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Take input paths
+     
         System.out.print("Enter source directory path: ");
         Path sourceDir = Paths.get(sc.nextLine());
 
@@ -20,7 +20,7 @@ public class DirectoryCopy {
         }
 
         try {
-            // Walk the source directory tree
+          
             Files.walkFileTree(sourceDir, new SimpleFileVisitor<>() {
                 @Override
                 public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
