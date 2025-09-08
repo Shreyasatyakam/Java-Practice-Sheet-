@@ -24,10 +24,10 @@ public class EmployeeSort {
         Scanner sc = new Scanner(System.in);
         List<Employee> employees = new ArrayList<>();
 
-        // Take input
+        
         System.out.print("Enter number of employees: ");
         int n = sc.nextInt();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
 
         for (int i = 0; i < n; i++) {
             System.out.print("Enter employee name: ");
@@ -35,12 +35,12 @@ public class EmployeeSort {
 
             System.out.print("Enter salary: ");
             double salary = sc.nextDouble();
-            sc.nextLine(); // consume newline
+            sc.nextLine();
 
             employees.add(new Employee(name, salary));
         }
 
-        // Sort by salary (ascending)
+        
         List<Employee> sorted = employees.stream()
                 .sorted(Comparator.comparingDouble(Employee::getSalary))
                 .collect(Collectors.toList());
